@@ -1,5 +1,5 @@
+using Constantces;
 using MainCamera;
-using UnityEngine;
 using Zenject;
 
 namespace Installer.CameraInstaller
@@ -15,7 +15,7 @@ namespace Installer.CameraInstaller
 
             Container
             .Bind<CameraView>()
-            .FromComponentInNewPrefabResource("Camera")
+            .FromComponentInNewPrefabResource(ResourcesConst.Camera)
             .AsSingle()
             .NonLazy();
         }

@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using Constantces;
+using Zenject;
 
 namespace AudioController
 {
@@ -8,15 +9,15 @@ namespace AudioController
         {
             Container
                 .Bind<AudioModelConfig>()
-                .FromScriptableObjectResource("AudioModelConfig")
+                .FromScriptableObjectResource(ResourcesConst.AudioModelConfig)
                 .AsSingle()
                 .NonLazy();
         
             Container
                 .BindMemoryPool<AudioView, AudioView.Pool>()
                 .WithInitialSize(10)
-                .FromComponentInNewPrefabResource("AudioView")
-                .UnderTransformGroup("AudioViewGroup");
+                .FromComponentInNewPrefabResource(ResourcesConst.AudioView)
+                .UnderTransformGroup(ResourcesConst.AudioViewGroup);
         
             Container
                 .Bind<AudioController>()

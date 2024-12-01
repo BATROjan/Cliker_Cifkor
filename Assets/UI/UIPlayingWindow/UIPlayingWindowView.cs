@@ -12,9 +12,17 @@ namespace UI.UIPlayingWindow
             {
                MoneyText = value;
             }
+        } 
+        public Text EnergyText{
+            get => energyText;
+            set
+            {
+                energyText = value;
+            }
         }
         [SerializeField] private UIButton[] buttons;
         [SerializeField] private Text moneyText;
+        [SerializeField] private Text energyText;
         
         public override void Show()
         {

@@ -1,5 +1,6 @@
 using AudioController;
 using Click;
+using Energy;
 using Money;
 using UI;
 using Zenject;
@@ -21,6 +22,9 @@ namespace Installer
                 .Install(Container);
             
             ClickInstaller
+                .Install(Container);
+            
+            EnergyInstaller
                 .Install(Container);
             
             Container

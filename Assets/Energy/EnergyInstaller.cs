@@ -1,20 +1,20 @@
 ﻿using Constantces;
 using Zenject;
 
-namespace Click
+namespace Energy
 {
-    public class ClickInstaller : Installer<ClickInstaller>
+    public class EnergyInstaller: Installer<EnergyInstaller>
     {
         public override void InstallBindings()
         {
             Container
-                .Bind<ClickConfig>()
-                .FromScriptableObjectResource(ResourcesConst.ClickConfig)
+                .Bind<EnergyConfig>()
+                .FromScriptableObjectResource(ResourcesConst.EnergyConfig)
                 .AsSingle()
                 .NonLazy();
             
             Container
-                .Bind<ClickController>()
+                .Bind<EnergyController>()
                 .AsSingle().NonLazy();
         }
     }

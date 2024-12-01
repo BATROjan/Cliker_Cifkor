@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using Constantces;
+using Zenject;
 
 namespace Money
 {
@@ -8,7 +9,7 @@ namespace Money
         {
             Container
                 .Bind<MoneyConfig>()
-                .FromScriptableObjectResource("MoneyConfig")
+                .FromScriptableObjectResource(ResourcesConst.MoneyConfig)
                 .AsSingle()
                 .NonLazy();
         
