@@ -5,10 +5,8 @@ using Zenject;
 public class AudioView : MonoBehaviour, IPoolable<AudioProtocol, IMemoryPool>
 {
     public AudioSource AudioSource => audioSource;
-    public AudioGroupType GroupType => groupType;
     
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioGroupType groupType;
     public void OnDespawned()
     {
     }
@@ -18,7 +16,6 @@ public class AudioView : MonoBehaviour, IPoolable<AudioProtocol, IMemoryPool>
         audioSource.clip = protocol.AudioModel.AudioClip;
         audioSource.loop = protocol.AudioModel.Loop;
         audioSource.volume = protocol.AudioModel.Volume;
-        groupType = protocol.AudioModel.GroupType;
     }
     
     private void ReInit(AudioProtocol protocol)

@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbdcdce476f4ffaad4289830ec2ad64, type: 3}
   m_Name: AudioModelConfig
   m_EditorClassIdentifier: 
-  audioModels: []
+  audioModels:
+  - Type: 0
+    AudioClip: {fileID: 8300000, guid: ea1614feab8ee1e439c44432f89e4a32, type: 3}
+    Loop: 1
+    Volume: 0.5
+  - Type: 1
+    AudioClip: {fileID: 8300000, guid: d866090739e53964d9aa544f610b4202, type: 3}
+    Loop: 0
+    Volume: 1

@@ -27,23 +27,6 @@ public class AudioModelConfig : ScriptableObject
         return new AudioModel();
     }   
     
-    public void SetAudioVolumeByGroup(AudioGroupType type, float volume)
-    {
-        foreach (var model in audioModels)
-        {
-            if (model.GroupType == type)
-            {
-                AudioModel audioModel = new AudioModel();
-                audioModel = model;
-                audioModel.Volume = volume;
-                int id = Array.IndexOf(audioModels, model);
-                audioModels[id] = audioModel;
-            }
-        }
-        _dictAudioModels.Clear();
-        Init();
-    }
-    
     private void Init()
     {
         foreach (var model in audioModels)
@@ -60,17 +43,12 @@ public class AudioModelConfig : ScriptableObject
 public struct AudioModel
 {
     public AudioType Type;
-    public AudioGroupType GroupType;
     public AudioClip AudioClip;
     public bool Loop;
     public float Volume;
 }
 public enum AudioType
 {
-    Background
-}
-public enum AudioGroupType
-{
-    Main,
-    Effect
+    Background,
+    Click
 }

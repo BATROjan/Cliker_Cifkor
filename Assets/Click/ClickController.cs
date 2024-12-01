@@ -17,6 +17,7 @@ namespace Click
             }
         }
 
+        private readonly AudioController.AudioController _audioController;
         private readonly ClickConfig _clickConfig;
         private readonly IUIService _uiService;
         private readonly MoneyController _moneyController;
@@ -28,11 +29,13 @@ namespace Click
         private UIPlayingWindowView _uiPlayingWindow;
 
         public ClickController(
+            AudioController.AudioController audioController,
             ClickConfig clickConfig,
             IUIService uiService,
             MoneyController moneyController,
             EnergyController energyController)
         {
+            _audioController = audioController;
             _clickConfig = clickConfig;
             _uiService = uiService;
             _moneyController = moneyController;
@@ -62,6 +65,8 @@ namespace Click
 
         private void ClickLogic()
         {
+            _audioController.Play(AudioType.Click);
+            
             if (_energyController.CheckRemoveEnergy())
             {
                 _energyController.RemoveEnergy();
