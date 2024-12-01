@@ -6,9 +6,15 @@ namespace UI.UIPlayingWindow
     public class UIPlayingWindowView : UIWindow
     {
         public UIButton[] Buttons => buttons;
-        
-        [SerializeField] private UIButton[] buttons; 
-        [SerializeField] private Text rulesText;
+        public Text MoneyText{
+            get => moneyText;
+            set
+            {
+               MoneyText = value;
+            }
+        }
+        [SerializeField] private UIButton[] buttons;
+        [SerializeField] private Text moneyText;
         
         public override void Show()
         {
