@@ -1,4 +1,5 @@
-﻿using Money;
+﻿using Constantces;
+using Money;
 using UI.UIService;
 
 namespace UI.UIPlayingWindow
@@ -23,7 +24,7 @@ namespace UI.UIPlayingWindow
             _uiPlayingWindow.ShowAction += Show;
             _uiPlayingWindow.HideAction += Hide;
 
-            _uiService.Show<UIPlayingWindowView>(0);
+            _uiService.Show<UIPlayingWindowView>(ResourcesConst.UILayer);
         }
 
         private void Hide()

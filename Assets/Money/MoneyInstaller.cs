@@ -12,6 +12,10 @@ namespace Money
                 .FromScriptableObjectResource(ResourcesConst.MoneyConfig)
                 .AsSingle()
                 .NonLazy();
+            
+            Container
+                .BindMemoryPool<MoneyView, MoneyView.Pool>()
+                .FromComponentInNewPrefabResource(ResourcesConst.MoneyView);
         
             Container
                 .Bind<MoneyController>()

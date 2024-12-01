@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f808867be674c58bca90e35b41333e2, type: 3}
   m_Name: EnergyConfig
   m_EditorClassIdentifier: 
-  maxEnergyCount: 10
+  maxEnergyCount: 1000
   recoverEnergyCount: 10
   removeEnergyCount: 1
+  delayToAddEnergy: 10

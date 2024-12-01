@@ -13,5 +13,10 @@
         public const string EnergyConfig = "EnergyConfig";
         
         public const string MoneyConfig = "MoneyConfig";
+        public const string MoneyView = "MoneyView";
+
+        public const int BlackOutLayer = 0;
+        public const int UILayer = 1;
+        public const int ObjectLayer = 2;
     }
 }

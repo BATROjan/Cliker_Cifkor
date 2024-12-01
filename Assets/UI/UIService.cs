@@ -9,17 +9,20 @@ namespace UI.UIService
     public class UIService : IUIService
     {
         private Transform _deactivatedContainer;
-
+        
         private readonly IUIRoot _uIRoot;
         private readonly Dictionary<Type, UIWindow> _viewStorage = new Dictionary<Type, UIWindow>();
         private readonly Dictionary<Type, GameObject> _initWindows = new Dictionary<Type, GameObject>();
 
         private const string UISource = "";
 
-        public UIService(CameraController cameraController, IUIRoot uiRoot)
+        public UIService( 
+            CameraController cameraController,
+            IUIRoot uiRoot)
         {
             _uIRoot = uiRoot;
-
+            //var camera = _sceneObjectsStorage.Get<CameraView>();
+            _uIRoot.RootCanvas.worldCamera = cameraController.GetCameraView().MainCamera;
             LoadWindows(UISource);
             InitWindows(_uIRoot.DeativateContainer);
         }
